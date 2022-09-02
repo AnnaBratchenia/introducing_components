@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Rubik:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FriendList</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h2 class="action">FriendList</h2>
+        <ul class="list">
+          <li v-for="friend in friends" :key="friend.id" class="list_items box">
+            <div class="name">{{friend.name}}</div>
+            <button v-on:click="toggleButton" class="btn">
+              {{detaisIsShowed? 'Hide':'Show'}} details
+            </button>
+            <ul v-if="detaisIsShowed">
+              <div class="text box">Phone: {{friend.phone}}</div>
+              <div class="text box">Email: {{friend.email}}</div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
